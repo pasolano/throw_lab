@@ -5,11 +5,6 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using System;
 
-// current plan:
-// remove the bindings in the GUI
-// call select and deselect manually based on trigger pull amount
-// ALSO remove that trigger == select in settings
-
 public class HapticFeedback : MonoBehaviour
 {
     public bool vibrationOnRelease;
@@ -66,10 +61,6 @@ public class HapticFeedback : MonoBehaviour
 
     public void DropObject()
     {
-        // SelectExitEventArgs args = new SelectExitEventArgs();
-        // args.isCanceled = false;
-        // args.interactor = interactor;
-        // args.interactable = xrGrabInteractable;
         interMan.SelectExit(interactor, xrGrabInteractable);
         if (vibrationOnRelease)
             BuzzControllers();
@@ -77,11 +68,7 @@ public class HapticFeedback : MonoBehaviour
 
     public void GrabObject()
     {
-        // SelectEnterEventArgs args = new SelectEnterEventArgs();
-        // args.interactor = interactor;
-        // args.interactable = xrGrabInteractable;
         interMan.SelectEnter(interactor, xrGrabInteractable);
-        // interMan.SelectEnter(interactor, xrGrabInteractable, args);
     }
 
     public bool HoldingObject(Direction hand)
@@ -99,8 +86,6 @@ public class HapticFeedback : MonoBehaviour
         return controller.GetComponent<XRRayInteractor>();
     }
 
-    // problem
-    // GrabObject section needs to wait for trigger to hit zero before listening for this
     void Update()
     {
         currTriggerPercentage = GetTriggerValue(userDominantHand);
@@ -109,7 +94,8 @@ public class HapticFeedback : MonoBehaviour
         if (!HoldingObject(userDominantHand) && hitZeroState)
         {
             // if trigger threshold passed
-            if (triggerReleasePercentage <= currTriggerPercentage) // should grabbing the ball have the same sensitivity?
+            // NOTE this is based on public trigger percentage
+            if (triggerReleasePercentage <= currTriggerPercentage)
             {
                 GrabObject();
                 hitZeroState = false;
@@ -140,8 +126,8 @@ public class HapticFeedback : MonoBehaviour
         }
 
         // update zero state
-        // TODO should this be based on public trigger percentage?
-        if (currTriggerPercentage == 0)
+        // NOTE this is based on public trigger percentage
+        if (currTriggerPercentage < triggerReleasePercentage)
             hitZeroState = true;
     }
 
@@ -167,6 +153,7 @@ public class HapticFeedback : MonoBehaviour
         UnityEngine.XR.InputDevice device = handDevices[0];
 
         var inputFeatures = new List<UnityEngine.XR.InputFeatureUsage>();
+        
         if (device.TryGetFeatureUsages(inputFeatures))
         {
             foreach (var feature in inputFeatures)
@@ -182,6 +169,7 @@ public class HapticFeedback : MonoBehaviour
                 }
             }
         }
+
         Debug.LogError("Function \"getTriggerValue\" is not returning a featureValue");
         throw new Exception("Function \"getTriggerValue\" is not returning a featureValue");
     }
