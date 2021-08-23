@@ -153,7 +153,7 @@ public class HapticFeedback : MonoBehaviour
         UnityEngine.XR.InputDevice device = handDevices[0];
 
         var inputFeatures = new List<UnityEngine.XR.InputFeatureUsage>();
-        
+
         if (device.TryGetFeatureUsages(inputFeatures))
         {
             foreach (var feature in inputFeatures)
@@ -161,11 +161,11 @@ public class HapticFeedback : MonoBehaviour
                 if (feature.name == "Trigger")
                 {
                     float featureValue;
+                    
                     if (device.TryGetFeatureValue(feature.As<float>(), out featureValue))
                     {
                         return featureValue;
-                    }
-                    
+                    } 
                 }
             }
         }
