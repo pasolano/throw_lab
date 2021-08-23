@@ -15,6 +15,7 @@ public class HapticFeedback : MonoBehaviour
     public bool vibrationOnRelease;
     public bool pullTriggerForRelease;
     public float triggerReleasePercentage;
+    public bool showHitIndicators;
     public Direction userDominantHand;
     InputDevice leftDevice;
     InputDevice rightDevice;

@@ -12,17 +12,26 @@ public class CollisionDetection : MonoBehaviour
     GameObject collisionMarker;
 
     Vector3 collisionSphereSize = new Vector3(0.02f, 0.02f, 0.25f);
-    Collider collider;
+    Collider coll;
+
+    bool hitIndicators;
+
+    void Start()
+    {
+        GameObject obj = GameObject.Find("GrabSphere");
+        var component = obj.GetComponent<HapticFeedback>();
+        hitIndicators = component.showHitIndicators;
+    }
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.collider.name == "GrabSphere")
+        if (other.collider.name == "GrabSphere" && hitIndicators)
         {
             Destroy(collisionMarker);
             collisionPoint = other.GetContact(0).point;
             collisionMarker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            collider = collisionMarker.GetComponent(typeof(Collider)) as Collider;
-            collider.enabled = false;
+            coll = collisionMarker.GetComponent(typeof(Collider)) as Collider;
+            coll.enabled = false;
             collisionMarker.transform.position = collisionPoint;
             collisionMarker.transform.localScale = collisionSphereSize;
         }
