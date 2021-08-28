@@ -10,6 +10,7 @@ public class CollisionDetection : MonoBehaviour
 
     Vector3 collisionPoint;
     GameObject collisionMarker;
+    HapticFeedback hapFeed;
 
     Vector3 collisionSphereSize = new Vector3(0.02f, 0.02f, 0.25f);
     Collider coll;
@@ -19,12 +20,13 @@ public class CollisionDetection : MonoBehaviour
     void Start()
     {
         GameObject obj = GameObject.Find("GrabSphere");
-        var component = obj.GetComponent<HapticFeedback>();
-        hitIndicators = component.showHitIndicators;
+        hapFeed = obj.GetComponent<HapticFeedback>();
     }
 
     void OnCollisionEnter(Collision other)
     {
+        hitIndicators = hapFeed.showHitIndicators; // not done in Start() to avoid race condition with HapticFeedback Start()/getIntent()
+
         if (other.collider.name == "GrabSphere" && hitIndicators)
         {
             Destroy(collisionMarker);

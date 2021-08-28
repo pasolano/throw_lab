@@ -904,8 +904,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vibrationOnRelease: 1
-  pullTriggerForRelease: 1
-  triggerReleasePercentage: 100
+  pullTriggerForRelease: 0
+  triggerReleasePercentage: 80
+  showHitIndicators: 1
   userDominantHand: 1
 --- !u!1 &253995837
 GameObject:

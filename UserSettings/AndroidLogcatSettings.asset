@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "1WMHH840EJ1135",
         "name": "com.UniversityofWyoming.ThrowingDemo",
-        "processId": 29785,
+        "processId": 5222,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,175 +11,67 @@
         {
             "deviceId": "1WMHH840EJ1135",
             "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 4909,
-            "exited": true
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 5381,
-            "exited": true
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 5726,
-            "exited": true
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 6066,
-            "exited": true
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 6513,
-            "exited": true
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 6826,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 7174,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 7610,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 8127,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 10100,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 10563,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 10851,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 11300,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 11797,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 12111,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 12483,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 13028,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 13395,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 13664,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 13988,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 14545,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 14892,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 15207,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
-            "processId": 15498,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH840EJ1135",
-            "name": "com.UniversityofWyoming.ThrowingDemo",
             "processId": 15632,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "1WMHH840EJ1135",
             "name": "com.UniversityofWyoming.ThrowingDemo",
             "processId": 16003,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "1WMHH840EJ1135",
             "name": "com.UniversityofWyoming.ThrowingDemo",
             "processId": 16361,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "1WMHH840EJ1135",
             "name": "com.UniversityofWyoming.ThrowingDemo",
             "processId": 16881,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "1WMHH840EJ1135",
             "name": "com.UniversityofWyoming.ThrowingDemo",
             "processId": 29785,
+            "exited": true
+        },
+        {
+            "deviceId": "1WMHH840EJ1135",
+            "name": "com.oculus.shellenv",
+            "processId": 3350,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH840EJ1135",
+            "name": "com.UniversityofWyoming.ThrowingDemo",
+            "processId": 28661,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH840EJ1135",
+            "name": "com.UniversityofWyoming.ThrowingDemo",
+            "processId": 7517,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH840EJ1135",
+            "name": "com.UniversityofWyoming.ThrowingDemo",
+            "processId": 4402,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH840EJ1135",
+            "name": "com.UniversityofWyoming.ThrowingDemo",
+            "processId": 4299,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH840EJ1135",
+            "name": "com.UniversityofWyoming.ThrowingDemo",
+            "processId": 5222,
             "exited": false
         }
     ],
@@ -233,7 +125,7 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "",
+    "m_Filter": "Test resule",
     "m_FilterIsRegularExpression": false,
     "m_SymbolPaths": []
 }

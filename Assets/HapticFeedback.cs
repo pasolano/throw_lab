@@ -7,10 +7,23 @@ using System;
 
 public class HapticFeedback : MonoBehaviour
 {
-    public bool vibrationOnRelease;
-    public bool pullTriggerForRelease;
-    public float triggerReleasePercentage;
+    // inspector vars
+    [SerializeField]
+    private bool vibrationOnReleasePub;
+    [SerializeField]
+    private bool pullTriggerForReleasePub;
+    [SerializeField]
+    private float triggerReleasePercentagePub;
+    [SerializeField]
+    private bool showHitIndicatorsPub;
+
+    // logic controlling vars
+    private bool vibrationOnRelease;
+    private bool pullTriggerForRelease;
+    private float triggerReleasePercentage;
+    [HideInInspector]
     public bool showHitIndicators;
+
     public Direction userDominantHand;
     InputDevice leftDevice;
     InputDevice rightDevice;
@@ -20,12 +33,22 @@ public class HapticFeedback : MonoBehaviour
     XRInteractionManager interMan;
     bool hitZeroState = true;
     float currTriggerPercentage;
+
     void Start()
     {
+        // set logic controllers to inspector var values
+        vibrationOnRelease = vibrationOnReleasePub;
+        pullTriggerForRelease = pullTriggerForReleasePub;
+        triggerReleasePercentage = triggerReleasePercentagePub;
+        showHitIndicators = showHitIndicatorsPub;
+
         xrGrabInteractable = GetComponent<XRGrabInteractable>();
         interactor = GetDominantInteractor(userDominantHand);
         interMan = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
         triggerReleasePercentage /= 100;
+
+        // set to command-line values
+        getIntent();
     }
 
     public enum Direction
@@ -37,7 +60,7 @@ public class HapticFeedback : MonoBehaviour
     // ensures trigger release percentage is set to a positive number
     private void OnValidate()
     {
-        triggerReleasePercentage = Mathf.Clamp(triggerReleasePercentage, 0, float.MaxValue); // or int.MaxValue, if you need to use an int but can't use uint.
+        triggerReleasePercentage = Mathf.Clamp(triggerReleasePercentage, 0, 100f); // or int.MaxValue, if you need to use an int but can't use uint.
     }
 
     public void BuzzControllers()
@@ -161,7 +184,7 @@ public class HapticFeedback : MonoBehaviour
                 if (feature.name == "Trigger")
                 {
                     float featureValue;
-                    
+
                     if (device.TryGetFeatureValue(feature.As<float>(), out featureValue))
                     {
                         return featureValue;
@@ -172,5 +195,32 @@ public class HapticFeedback : MonoBehaviour
 
         Debug.LogError("Function \"getTriggerValue\" is not returning a featureValue");
         throw new Exception("Function \"getTriggerValue\" is not returning a featureValue");
+    }
+
+    private void getIntent()
+    { 
+        AndroidJavaClass UnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"); 
+        AndroidJavaObject currentActivity = UnityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+        
+        AndroidJavaObject intent = currentActivity.Call<AndroidJavaObject>("getIntent");
+        AndroidJavaObject extras = intent.Call<AndroidJavaObject> ("getExtras");
+        
+        bool hasPull = intent.Call<bool> ("hasExtra", "pull");
+        if (hasPull)
+            pullTriggerForRelease = extras.Call<bool> ("getBoolean", "pull");
+
+        bool hasVibro = intent.Call<bool> ("hasExtra", "vibro");
+        if (hasVibro)
+            vibrationOnRelease = extras.Call<bool> ("getBoolean", "vibro");
+
+        bool hasIndic = intent.Call<bool> ("hasExtra", "indic");
+        if (hasIndic)
+            showHitIndicators = extras.Call<bool> ("getBoolean", "indic");
+
+        bool hasTiming = intent.Call<bool> ("hasExtra", "timing");
+        if (hasTiming) {
+            triggerReleasePercentage = extras.Call<float> ("getFloat", "timing");
+            triggerReleasePercentage /= 100;
+        }
     }
 }
