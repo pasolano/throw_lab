@@ -6,7 +6,7 @@ vibro
 indic
  - `bool`, true for hit indicators on, false for off
 timing
- - `double`, value for the sensitivity of the trigger
+ - `float`, value for the sensitivity of the trigger
 
 ## Example commands
  - Open app with all parameters specified
