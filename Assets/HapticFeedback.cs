@@ -99,7 +99,7 @@ public class HapticFeedback : MonoBehaviour
         return interactor.selectTarget;
     }
 
-    public XRRayInteractor GetDominantInteractor(Direction hand)
+    public static XRRayInteractor GetDominantInteractor(Direction hand)
     {
         GameObject controller = null;
         if (hand == Direction.Left)

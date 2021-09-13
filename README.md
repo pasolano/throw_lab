@@ -1,12 +1,16 @@
+## Controls:
+ - Main trigger to throw
+ - X/A to set target at eye-level
+
 ## Keys
 pull
- - `bool`, true for trigger pull, false for trigger release
+: `bool`, true for trigger pull, false for trigger release
 vibro
- - `bool`, true for vibration feedback on, false for off
+: `bool`, true for vibration feedback on, false for off
 indic
- - `bool`, true for hit indicators on, false for off
+: `bool`, true for hit indicators on, false for off
 timing
- - `float`, value for the sensitivity of the trigger
+: `float`, value for the sensitivity of the trigger
 
 ## Example commands
  - Open app with all parameters specified
